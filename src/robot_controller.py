@@ -26,7 +26,7 @@ class RobotController:
         return copy.deepcopy(self.__gs.map)
     
     def get_towers(self, team: Team) -> List[Tower]:
-        return copy.deepcopy(list(self.__gs.towers[team]).values())
+        return copy.deepcopy(list(self.__gs.towers[team].values()))
     
     def get_debris(self, team: Team) -> List[Debris]:
         return copy.deepcopy(list(self.__gs.debris[team].values()))
@@ -61,6 +61,9 @@ class RobotController:
     
     def get_balance(self, team: Team) -> int:
         return self.__gs.balance[team]
+    
+    def get_health(self, team: Team) -> int:
+        return self.__gs.health[team]
     
     def get_turn(self) -> int:
         return self.__gs.turn
